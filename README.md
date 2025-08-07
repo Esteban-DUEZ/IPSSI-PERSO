@@ -1,5 +1,35 @@
 # Stack de monitoring Docker : Grafana, Prometheus, Flask, PostgreSQL, nginx
 
+## Schéma réseau
+```
+           +-------------------+
+           |      nginx        |
+           +-------------------+
+           |   /grafana/       |
+           |   /prometheus/    |
+           |   /api/           |
+           +-------------------+
+                    |
+        +-----------+---------------------+
+        |           |                     |
++--------+   +-------------+      +-------------+
+| Grafana|<-->| Prometheus  |     |  Flask API  |
++--------+   +-------------+      +-------------+
+                    |                       |
+            +-------+-------+               |
+            |               |               |    
+    +--------------+   +-------------+  +-------------+
+    |Node Exporter |   |Postgres Exp.|  | BDD Postgres|
+    +--------------+   +-------------+  +-------------+
+
+Liaisons :
+- Grafana interroge Prometheus
+- Prometheus collecte les métriques Node/Postgres Exporter
+- Postgres Exporter collecte depuis PostgreSQL
+- Flask API communique avec PostgreSQL
+(frontend et backend sont des réseaux Docker isolés)
+```
+
 ## Présentation
 Ce projet déploie une stack de monitoring moderne. Tu y trouveras :
 - **Grafana** pour visualiser les métriques
@@ -81,41 +111,6 @@ Un script est dispo pour sauvegarder la base à la demande :
 bash scripts/backup-db.sh
 ```
 Le dump est créé dans `/backup` du conteneur. Tu peux monter un volume pour le récupérer sur ta machine.
-
-## Schéma réseau
-```
-           +-------------------+
-           |      nginx        |
-           +-------------------+
-           |   /grafana/       |
-           |   /prometheus/    |
-           |   /api/           |
-           +-------------------+
-                    |
-        +-----------+---------------------+
-        |           |                     |
-+--------+   +-------------+      +-------------+
-| Grafana|<-->| Prometheus  |     |  Flask API  |
-+--------+   +-------------+      +-------------+
-                    |                       |
-            +-------+-------+               |
-            |               |               |    
-    +--------------+   +-------------+  +-------------+
-    |Node Exporter |   |Postgres Exp.|  | BDD Postgres|
-    +--------------+   +-------------+  +-------------+
-
-Liaisons :
-- Grafana interroge Prometheus
-- Prometheus collecte les métriques Node/Postgres Exporter
-- Postgres Exporter collecte depuis PostgreSQL
-- Flask API communique avec PostgreSQL
-(frontend et backend sont des réseaux Docker isolés)
-```
-
-## Preuve de fonctionnement
-Voici une capture d’écran du dashboard Grafana qui montre que tout fonctionne :
-
-![Dashboard Grafana Node Exporter](./screenshots/image.png)
 
 ---
 Projet réalisé pour montrer une stack de monitoring moderne avec nginx.
