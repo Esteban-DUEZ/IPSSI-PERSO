@@ -1,13 +1,13 @@
-# Monitoring Stack avec Docker, Nginx, Grafana, Prometheus et API Flask
+# Stack de monitoring Docker : Grafana, Prometheus, Flask, PostgreSQL, nginx
 
 ## Présentation
-Ce projet met en place une stack de monitoring complète avec les outils suivants :
-- **Grafana** : visualisation des métriques
-- **Prometheus** : collecte des métriques
-- **Node Exporter** et **Postgres Exporter** : export des métriques système et base de données
-- **API Flask** : backend simple pour démonstration
-- **PostgreSQL** : base de données pour l’API
-- **nginx** : reverse proxy pour exposer tous les services
+Ce projet déploie une stack de monitoring moderne. Tu y trouveras :
+- **Grafana** pour visualiser les métriques
+- **Prometheus** pour collecter les métriques
+- **Node Exporter** et **Postgres Exporter** pour exporter les stats système et base de données
+- **API Flask** pour tester et manipuler la base
+- **PostgreSQL** comme base de données
+- **nginx** pour exposer tous les services sur une seule adresse
 
 ## Architecture
 ```
@@ -19,46 +19,32 @@ Ce projet met en place une stack de monitoring complète avec les outils suivant
 | /api/       ---> backend:5000
 +-------------------+
 ```
-- Tous les services sont orchestrés via **Docker Compose**.
-- Les réseaux `frontend` et `backend` isolent les services.
-- Les variables d’environnement sont centralisées dans le fichier `.env`.
+Tout tourne dans Docker Compose, chaque service est isolé sur son réseau.
 
 ## Configuration nginx
-Le fichier `nginx.conf` configure le reverse proxy :
-- `/grafana/` → Grafana
-- `/prometheus/` → Prometheus
-- `/api/` → API Flask
+Le reverse proxy nginx redirige :
+- `/grafana/` vers Grafana
+- `/prometheus/` vers Prometheus
+- `/api/` vers l’API Flask
 
 ## Endpoints API Flask
-- `GET /api/health` : Vérifie la santé de l’API
+- `GET /api/health` : Vérifie si l’API est en ligne
 - `GET /api/tasks` : Liste les tâches
 - `POST /api/tasks` : Ajoute une tâche
-- `GET /api/` : Message d’accueil API
+- `GET /api/` : Message d’accueil
 
 ## Exemples de réponses API Flask
-
-- `GET /api/health` :
-```json
-{"status": "healthy"}
-```
-
-- `GET /api/` :
-```json
-{"message": "API root OK"}
-```
-
-- `GET /api/tasks` :
-```json
-[]
-```
+- `/api/health` : `{"status": "healthy"}`
+- `/api/` : `{"message": "API root OK"}`
+- `/api/tasks` : `[]`
 
 ## Accès aux services
-- **Grafana** : http://localhost/grafana/
-- **Prometheus** : http://localhost/prometheus/
-- **API Flask** : http://localhost/api/
+- Grafana : http://localhost/grafana/
+- Prometheus : http://localhost/prometheus/
+- API Flask : http://localhost/api/
 
 ## Variables d’environnement
-Exemple de fichier `.env` :
+Exemple de `.env` :
 ```
 POSTGRES_DB=todo
 POSTGRES_USER=todo_user
@@ -68,8 +54,8 @@ GRAFANA_PASSWORD=UltraSecureGrafanaPwd!
 ```
 
 ## Sécurité
-- Changez les mots de passe par défaut avant mise en production.
-- Limitez l’accès public via firewall ou configuration réseau.
+- Il faut changer les mots de passe avant la mise en production.
+- Protège l’accès public avec un firewall ou ta config réseau.
 
 ## Démarrage rapide
 ```bash
@@ -78,62 +64,25 @@ docker-compose up -d
 ```
 
 ## Tests
-- Vérifiez l’accès aux dashboards Grafana et Prometheus via nginx.
-- Testez l’API Flask :
-  - `curl http://localhost/api/health`
-  - `curl http://localhost/api/`
-
-## Tests automatiques de la stack
-
-Pour vérifier que tous les services sont accessibles via nginx, lancez les commandes suivantes :
-
+Pour vérifier que tout marche, lance :
 ```bash
-# Test Grafana
 curl -s http://localhost/grafana/ | head -n 20
-# Test Prometheus
 curl -s http://localhost/prometheus/ | head -n 20
-# Test API Flask
 curl -s http://localhost/api/health
 ```
-
-Exemples de résultats attendus :
-- Grafana : redirection vers la page de login (`<a href="/grafana/login">Found</a>`) 
-- Prometheus : redirection vers la page de requête (`<a href="/query">Found</a>`) 
-- API Flask : `{"status":"healthy"}`
-
-Si tous les retours sont conformes, la stack est opérationnelle et prête pour le rendu.
+Si tu vois la page de login Grafana, la page d’accueil Prometheus et le message healthy de l’API, c’est bon.
 
 ## Pourquoi nginx ?
-- Choix pour la simplicité, la documentation et la flexibilité.
-- Remplace Traefik pour ce projet car la config est plus directe et adaptée à un rendu pédagogique.
+Simple, bien documenté, flexible. Ici il remplace Traefik pour que la config soit plus directe et pédagogique.
 
-## Screenshots / Démo
-Ajoutez ici des captures d’écran ou exemples de requêtes pour le rendu.
+## Sauvegarde manuelle PostgreSQL
+Un script est dispo pour sauvegarder la base à la demande :
+```bash
+bash scripts/backup-db.sh
+```
+Le dump est créé dans `/backup` du conteneur. Tu peux monter un volume pour le récupérer sur ta machine.
 
-## Bonnes pratiques pour l'URL Grafana
-
-> ⚠️ Pour éviter de versionner l'IP du serveur, utilisez une variable d'environnement dynamique. Exemple :
-
-Dans `.env` (ne pas versionner la valeur réelle, juste la clé) :
-```
-GF_SERVER_ROOT_URL=http://$(hostname -I | awk '{print $1}')/grafana/
-```
-Dans `docker-compose.yml` :
-```
-- GF_SERVER_ROOT_URL=${GF_SERVER_ROOT_URL}
-```
-
-Ou, pour une solution plus portable, laissez la variable vide dans `.env` et définissez-la à l'exécution :
-```
-GF_SERVER_ROOT_URL=
-```
-Et lancez :
-```
-GF_SERVER_ROOT_URL="http://$(hostname -I | awk '{print $1}')/grafana/" docker-compose up -d
-```
-
-## Schéma réseau (ASCII)
-
+## Schéma réseau
 ```
            +-------------------+
            |      nginx        |
@@ -154,16 +103,19 @@ GF_SERVER_ROOT_URL="http://$(hostname -I | awk '{print $1}')/grafana/" docker-co
     +--------------+   +-------------+  +-------------+
     |Node Exporter |   |Postgres Exp.|  | BDD Postgres|
     +--------------+   +-------------+  +-------------+
-                            
-
 
 Liaisons :
-- Grafana interroge Prometheus pour les métriques
-- Prometheus collecte les métriques depuis Node Exporter et Postgres Exporter
+- Grafana interroge Prometheus
+- Prometheus collecte les métriques Node/Postgres Exporter
 - Postgres Exporter collecte depuis PostgreSQL
 - Flask API communique avec PostgreSQL
 (frontend et backend sont des réseaux Docker isolés)
 ```
 
+## Preuve de fonctionnement
+Voici une capture d’écran du dashboard Grafana qui montre que tout fonctionne :
+
+![Dashboard Grafana Node Exporter](./screenshots/image.png)
+
 ---
-*Projet réalisé pour démonstration d’une stack de monitoring moderne avec reverse proxy nginx.*
+Projet réalisé pour montrer une stack de monitoring moderne avec nginx.
