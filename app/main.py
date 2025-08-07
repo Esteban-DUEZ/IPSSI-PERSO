@@ -42,5 +42,20 @@ def create_task():
     conn.close()
     return jsonify({"id": task_id, "message": "Task created"}), 201
 
+@app.route('/api', methods=['GET'])
+@app.route('/api/', methods=['GET'])
+def api_root():
+    return jsonify({"message": "API root OK"})
+
+@app.route('/routes', methods=['GET'])
+def list_routes():
+    import urllib
+    output = []
+    for rule in app.url_map.iter_rules():
+        methods = ','.join(rule.methods)
+        url = urllib.parse.unquote(str(rule))
+        output.append({'endpoint': rule.endpoint, 'methods': methods, 'url': url})
+    return jsonify(output)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
