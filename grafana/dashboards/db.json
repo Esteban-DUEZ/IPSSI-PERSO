@@ -1,0 +1,2621 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_OBSERVE-PROMETHEUS02",
+      "label": "prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    { "type": "panel", "id": "gauge", "name": "Gauge", "version": "" },
+    { "type": "grafana", "id": "grafana", "name": "Grafana", "version": "7.0.3" },
+    { "type": "panel", "id": "graph", "name": "Graph", "version": "" },
+    { "type": "datasource", "id": "prometheus", "name": "Prometheus", "version": "1.0.0" },
+    { "type": "panel", "id": "singlestat", "name": "Singlestat", "version": "" }
+  ],
+  "annotations": { "list": [ {} ] },
+  "editable": true,
+  "gnetId": 12485,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1592399036513,
+  "links": [],
+  "panels": [
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 2,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Up",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Up",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 3,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Connections",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Connections",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 24, "y": 0 },
+      "id": 4,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Database Size",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Database Size",
+        "format": "bytes",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 36, "y": 0 },
+      "id": 5,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Table Size",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Table Size",
+        "format": "bytes",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 48, "y": 0 },
+      "id": 6,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Index Size",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Index Size",
+        "format": "bytes",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 60, "y": 0 },
+      "id": 7,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL WAL Size",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "WAL Size",
+        "format": "bytes",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 72, "y": 0 },
+      "id": 8,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Replication Lag",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Replication Lag",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 84, "y": 0 },
+      "id": 9,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Replication Slots",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Replication Slots",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 96, "y": 0 },
+      "id": 10,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Locks",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Locks",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 108, "y": 0 },
+      "id": 11,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Activity",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Activity",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 120, "y": 0 },
+      "id": 12,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Background Writer",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Background Writer",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 132, "y": 0 },
+      "id": 13,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Checkpoints",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Checkpoints",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 144, "y": 0 },
+      "id": 14,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Statistics",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Statistics",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 156, "y": 0 },
+      "id": 15,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Replication",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Replication",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 168, "y": 0 },
+      "id": 16,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Background Writer",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Background Writer",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 180, "y": 0 },
+      "id": 17,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Checkpoints",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Checkpoints",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 192, "y": 0 },
+      "id": 18,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Statistics",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Statistics",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 204, "y": 0 },
+      "id": 19,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Replication",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Replication",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 216, "y": 0 },
+      "id": 20,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Background Writer",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Background Writer",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 228, "y": 0 },
+      "id": 21,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Checkpoints",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Checkpoints",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 240, "y": 0 },
+      "id": 22,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Statistics",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Statistics",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 252, "y": 0 },
+      "id": 23,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Replication",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Replication",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 264, "y": 0 },
+      "id": 24,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Background Writer",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Background Writer",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 276, "y": 0 },
+      "id": 25,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Checkpoints",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Checkpoints",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 288, "y": 0 },
+      "id": 26,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Statistics",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Statistics",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 300, "y": 0 },
+      "id": 27,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Replication",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Replication",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 312, "y": 0 },
+      "id": 28,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Background Writer",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Background Writer",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 324, "y": 0 },
+      "id": 29,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Checkpoints",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Checkpoints",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "editable": true,
+      "error": false,
+      "gridPos": { "h": 8, "w": 12, "x": 336, "y": 0 },
+      "id": 30,
+      "isNew": true,
+      "panels": [],
+      "title": "PostgreSQL Statistics",
+      "type": "graph",
+      "xaxis": {
+        "show": true,
+        "label": "Time",
+        "format": "date",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "yaxis": {
+        "show": true,
+        "label": "Statistics",
+        "format": "short",
+        "logBase": 1,
+        "min": null,
+        "max": null
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 2,
+      "points": false,
+      "pointradius": 5,
+      "stack": false,
+      "steppedLine": false,
+      "aliasColors": {},
+      "seriesOverrides": [],
+      "legend": {
+        "show": true,
+        "values": false
+      },
+      "nullPointMode": "null",
+      "timeFrom": null,
+      "timeShift": null,
+      "tooltip": {
+        "shared": true,
+        "value_type": "cumulative"
+      },
+      "xaxis": {
+        "mode": "time",
+        "name": null,
+        "values": [],
+        "buckets": null,
+        "show": true
+      },
+      "yaxes": [
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        },
+        {
+          "show": true,
+          "label": "Value",
+          "format": "short",
+          "logBase": 1,
+          "min": null,
+          "max": null
+        }
+      ],
+      "events": {
+        "onGraph": true,
+        "onLegend": true,
+        "onTooltip": true
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          { "value": null, "color": "green", "fill": true },
+          { "value": null, "color": "red", "fill": true }
+        ]
+      },
+      "timeRegions": [],
+      "options": {
+        "alertThreshold": true
+      }
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 25,
+  "style": "dark",
+  "tags": [],
+  "templating": { "list": [] },
+  "time": { "from": "now-24h", "to": "now" },
+  "timepicker": { "refresh_intervals": [] },
+  "timezone": "",
+  "title": "PostgreSQL Exporter",
+  "uid": "v5ciIbUZz",
+  "version": 2,
+  "description": "postgres exporter Dashboard for display important postgreSQL metric"
+}

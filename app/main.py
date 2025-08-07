@@ -13,7 +13,7 @@ def get_db_connection():
         password=os.environ.get('POSTGRES_PASSWORD')
     )
 
-@app.route('/health')
+@app.route('/api/health')
 def health():
     return jsonify({"status": "healthy"})
 
