@@ -14,6 +14,8 @@ services:
       - frontend
     expose:
       - "5000"
+    ports:
+      - "5000:5000"
 
   db:
     image: postgres:16
@@ -70,8 +72,8 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
-      - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s/grafana/
-      - GF_SERVER_SERVE_FROM_SUB_PATH=true
+      - GF_SERVER_ROOT_URL=http://10.10.0.104/grafana/
+      - GF_SERVER_SERVE_FROM_SUB_PATH="true"
     depends_on:
       - prometheus
     networks:
