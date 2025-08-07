@@ -1,0 +1,33 @@
+# Docker Compose
+.env
+docker-compose.override.yml
+docker-compose.*.yml
+
+# Docker
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+.docker/
+docker/
+Dockerfile*
+.dockerignore
+
+# pour les volumes
+volumes/
+data/
+logs/
+tmp/
+*.log
+
+# partie Secrets key ssh certificat etc
+secrets/
+*.pem
+*.key
+*.crt
+
+# autre 
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.code-workspace
