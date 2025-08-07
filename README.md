@@ -94,7 +94,7 @@ docker-compose up -d
 ```
 
 ## Preuve de fonctionnement
-Pour prouver que la stack fonctionne, tu peux lancer ces commandes :
+Pour prouver que la stack fonctionne, lance ces commandes :
 
 ```bash
 curl -s http://localhost/grafana/ | head -n 20
@@ -102,7 +102,19 @@ curl -s http://localhost/prometheus/ | head -n 20
 curl -s http://localhost/api/health
 ```
 
-Si tu vois la page de login Grafana, la page d’accueil Prometheus et le message healthy de l’API, c’est bon.
+Résultats attendus :
+- Grafana : redirection vers la page de login
+  ```html
+  <a href="/grafana/login">Found</a>
+  ```
+- Prometheus : redirection vers la page de requête
+  ```html
+  <a href="/query">Found</a>
+  ```
+- API Flask :
+  ```json
+  {"status":"healthy"}
+  ```
 
 Voici aussi une capture d’écran du dashboard Grafana qui montre que tout fonctionne :
 
