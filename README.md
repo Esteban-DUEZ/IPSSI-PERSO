@@ -93,14 +93,20 @@ docker-compose build
 docker-compose up -d
 ```
 
-## Tests
-Pour vérifier que tout marche, lance :
+## Preuve de fonctionnement
+Pour prouver que la stack fonctionne, tu peux lancer ces commandes :
+
 ```bash
 curl -s http://localhost/grafana/ | head -n 20
 curl -s http://localhost/prometheus/ | head -n 20
 curl -s http://localhost/api/health
 ```
+
 Si tu vois la page de login Grafana, la page d’accueil Prometheus et le message healthy de l’API, c’est bon.
+
+Voici aussi une capture d’écran du dashboard Grafana qui montre que tout fonctionne :
+
+![Dashboard Grafana Node Exporter](./screenshots/image.png)
 
 ## Pourquoi nginx ?
 Simple, bien documenté, flexible. Ici il remplace Traefik pour que la config soit plus directe et pédagogique.
